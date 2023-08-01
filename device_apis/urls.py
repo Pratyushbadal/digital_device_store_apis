@@ -13,5 +13,7 @@ urlpatterns = [
     path("api/device-detail/<int:device_id>", api_views.DeviceDetailView.as_view(), name="device_detail"),
     path("api/device-delete/<int:device_id>", api_views.DeviceDeleteView.as_view(), name="delete_device"),
     path("api/sell-device", api_views.DeviceSellView.as_view(), name="sell_device"),
+    path("api/device-update/<int:device_id>", api_views.DeviceUpdateView.as_view(), name="update_device"),
+    path("api/device-stats", api_views.DeviceStats.as_view(), name="device_stats"),
 
 ]
