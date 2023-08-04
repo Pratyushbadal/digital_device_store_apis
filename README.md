@@ -8,7 +8,8 @@ Read-
 Update- 
 Delete
 
-## Technologies Used- Python3    
+## Technologies Used
+- Python3    
     - Used for the backend programming language
 - Django  
     - Used for the backend framework
