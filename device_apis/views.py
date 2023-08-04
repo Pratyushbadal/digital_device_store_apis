@@ -116,28 +116,27 @@ class DeviceDetailView(generics.GenericAPIView):
                             status=status.HTTP_404_NOT_FOUND)
 
 
-def delete(request, device_id, *args, **kwargs):
-    try:
-        device = Devices.objects.get(id=device_id)
-        return Response({"message": "Device deleted successfully"},
-                        status=status.HTTP_200_OK)
-
-    except Devices.DoesNotExist as e:
-        return Response({"message": "Device not found",
-                        "error": str(e.__class__.__name__)},
-                        status=status.HTTP_404_NOT_FOUND)
-
-    except Devices.DoesNotExist as e:
-        return Response({"message": "Backend server error",
-                         "error": str(e.__class__.__name__)},
-                        status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
 class DeviceDeleteView(generics.GenericAPIView):
     """
     This API is used to delete the detail of a single device
     """
     permission_classes = [permissions.IsAuthenticated]
+
+    def delete(self, request, device_id, *args, **kwargs):
+        try:
+            device = Devices.objects.get(id=device_id)
+            return Response({"message": "Device deleted successfully"},
+                            status=status.HTTP_200_OK)
+
+        except Devices.DoesNotExist as e:
+            return Response({"message": "Device not found",
+                            "error": str(e.__class__.__name__)},
+                            status=status.HTTP_404_NOT_FOUND)
+
+        except Devices.DoesNotExist as e:
+            return Response({"message": "Backend server error",
+                             "error": str(e.__class__.__name__)},
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class DeviceSellView(generics.GenericAPIView):
