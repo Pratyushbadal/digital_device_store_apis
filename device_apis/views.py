@@ -12,7 +12,7 @@ from django.contrib.auth import authenticate
 # Create your views here.
 @api_view(["GET"])
 def home(request):
-    message = {"message": "Hello, world"}
+    message = {"message": "Welcome to Device APIs"}
     return Response(message, status=status.HTTP_200_OK)
 
 
