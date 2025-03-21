@@ -1,7 +1,7 @@
 # digital_device_store_apis
 This repository contains the APIs for digital devices
 
-## Project DescriptionThis project is a REST API for digital devices that includes CRUD operation for the Device entity
+## Project Description: This project is a REST API for digital devices that includes CRUD operation for the Device entity
 CRUD Full form:- 
 Create- 
 Read- 
